@@ -1,9 +1,7 @@
 /*--------------------------------------------------
-  Nome      : UNION ALL | TOP | ORDER BY
-  Descrição : Une duas consultas retornando a cidade
-             com o menor e o maior nome. Tendo como critério
-             de desempate a ordem alfabética.
-  Data       : 28/07/2026
+Descrição: Une duas consultas retornando a cidade com o menor e o maior nome. Tendo como critério de desempate a ordem alfabética.
+Data: 28/07/2026
+Consulta utilizando subconsultas para e UNION ALL para unir os resultados.
 --------------------------------------------------*/
 ```sql
 SELECT CITY, LEN(CITY)
@@ -21,4 +19,14 @@ FROM (
     FROM STATION
     ORDER BY LEN(CITY) DESC, CITY
 ) AS Maior;
+```
+/*--------------------------------------------------
+Descrição: Consultando todas as cidades que terminam com vogais, mas, sem retornar valores duplicados.
+Data: 03/11/2026
+Consulta utilizando LIKE e o conceito de lista, os colchetes funcionam como uma lista de opções de caracteres.
+--------------------------------------------------*/
+```sql
+SELECT DISTINCT CITY
+FROM STATION
+WHERE CITY LIKE '%[aeiou]';
 ```
