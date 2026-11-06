@@ -33,7 +33,7 @@ WHERE CITY LIKE '%[aeiou]';
 /*--------------------------------------------------
 Descrição: Consultando todas as cidades que iniciam E terminam com vogais, mas, sem retornar valores duplicados.
 Data: 04/11/2026
-Consulta utilizando LIKE, conceito de lista, os parênteses servem parar garantir que o banco resolve tudo o que está dentro do
+Consulta utilizando LIKE, os parênteses servem parar garantir que o banco resolve tudo o que está dentro do
 primeiro parêntese (achando o início), depois tudo o que está no segundo parêntese (achando o fim), e o AND faz a "interseção",
 garantindo que as duas regras sejam verdadeiras ao mesmo tempo para a mesma cidade.
 --------------------------------------------------*/
