@@ -31,7 +31,7 @@ FROM STATION
 WHERE CITY LIKE '%[aeiou]';
 ```
 /*--------------------------------------------------
-Descrição: Consultando todas as cidades que iniciam E terminam com vogais, mas, sem retornar valores duplicados.
+Descrição: Consultando todas as cidades que iniciam & terminam com vogais, mas, sem retornar valores duplicados.
 Data: 04/11/2026
 Consulta utilizando LIKE, os parênteses servem parar garantir que o banco resolve tudo o que está dentro do
 primeiro parêntese (achando o início), depois tudo o que está no segundo parêntese (achando o fim), e o AND faz a "interseção",
@@ -43,3 +43,18 @@ FROM STATION
 WHERE (CITY LIKE 'A%' OR CITY LIKE 'E%' OR CITY LIKE 'I%' OR CITY LIKE 'O%' OR CITY LIKE 'U%')
   AND (CITY LIKE '%a' OR CITY LIKE '%e' OR CITY LIKE '%i' OR CITY LIKE '%o' OR CITY LIKE '%u');
 ```
+/*--------------------------------------------------
+Descrição: Consultando os alunos que tiveram uma média acima de 75, ordenando os pelos três últimso caracteres e em casos onde
+as três últimas letras forem iguais, o critério de desempate é o ID do aluno.
+Data: 06/11/2026
+Consulta utilizando RIGHT() para obter os três últimos caracteres do nome de cada estudante. 
+O ORDER BY organiza os resultados com base nesses caracteres, enquanto o ID ASC funciona como critério de desempate, 
+garantindo que estudantes com os mesmos três últimos caracteres sejam ordenados pelo ID em ordem crescente.
+--------------------------------------------------*/
+```sql
+SELECT Name
+FROM STUDENTS
+WHERE Marks > 75
+ORDER BY RIGHT(Name, 3), ID ASC;
+```
+
